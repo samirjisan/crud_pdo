@@ -1,6 +1,11 @@
 <html>
-<body>
 
+
+<body>
+@extends('layouts.master')
+
+@section('learn')
+<h3>User Edit From</h3>
 @include('errors.error')
 
 <form action="{{ route('user.update',[$user->id]) }}" method="POST" enctype="multipart/form-data">
@@ -11,6 +16,8 @@
     <input type="text" name="gender" value="{{ $user-> gender }}">
 
     <input type="submit" name="submit" value="Update">
+
+@endsection
 </form>
 
 </body>

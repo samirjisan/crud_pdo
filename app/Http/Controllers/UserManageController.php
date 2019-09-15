@@ -26,14 +26,14 @@ class UserManageController extends Controller
             'email' => request('email'),
             'gender' => request('gender')
         ]);
-        return 'updated';
+        return redirect()->route('user.show')->with('updateSuccess','Successfully Updated');
 
     }
 
     public function delete($id){
 
         User::find($id)->delete();
-        return redirect()->route('user.show')->with('deletSuccess','Successfully Deleted');
+        return redirect()->route('user.show')->with('deleteSuccess','Successfully Deleted');
     }
 
 }

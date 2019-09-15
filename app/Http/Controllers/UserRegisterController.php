@@ -45,7 +45,9 @@ class UserRegisterController extends Controller
             ]);
         }
 
-        return 'Registered Succesful';
+        return redirect()->route('user.login')->with('register','Successfully Registered');
+
+
 
     }
 }
